@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const taskText = taskInput.value.trim();
     if (taskText === ""){
         alert("Please enter a task.");
-        return;
-    }
-        const li = document.createElement("li");
+    
+    } else{
+    const li = document.createElement("li");
         li.textContent = taskText;
     
      const btn = document.createElement("button");
@@ -25,11 +25,17 @@ document.addEventListener("DOMContentLoaded", function() {
     taskList.appendChild(li);
         taskInput.value = "";
 }
+   
  addButton.addEventListener('click', addTask);
   taskInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
       addTask();
     } 
- });
+  
+ }
  
+);
+
+
+   }
 });
