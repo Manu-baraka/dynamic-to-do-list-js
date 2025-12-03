@@ -7,22 +7,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
    function addTask() {
     let taskText = taskInput.value.trim();
-    if (taskText === ""){
-        alert("Please enter a task.");
+    if (taskText === "") {
+        alert("Please enter a task");
     
     } else{
-    let li = document.createElement("li");
-        li.textContent = taskText;
+    let list = document.createElement("li");
+        list.textContent = taskText;
     
      let btn = document.createElement("button");
         btn.textContent = "Remove";
-        btn.className = "remove-btn";
+        btn.classList.add = ("remove-btn");
         btn.onclick = function () {
-          li.remove();
+          list.remove();
    };
 
-   li.appendChild(btn);
-    taskList.appendChild(li);
+   list.appendChild(btn);
+    taskList.appendChild(list);
         taskInput.value = "";
 }
    
