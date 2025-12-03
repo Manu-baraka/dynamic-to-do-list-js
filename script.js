@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    addTask();
+
     const addButton = document.getElementById("add-task-btn");
     const taskInput = document.getElementById("task-input");
     const taskList = document.getElementById("task-list");
@@ -6,20 +8,20 @@ document.addEventListener("DOMContentLoaded", function() {
    function addTask() {
     const taskText = taskInput.value.trim();
     if (taskText === ""){
-        alert("Please enter a task!");
+        alert("Please enter a task.");
         return;
     }
         const li = document.createElement("li");
         li.textContent = taskText;
     
-     const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
-        removeBtn.className = "remove-btn";
-        removeBtn.onclick = function () {
+     const btn = document.createElement("button");
+        btn.textContent = "Remove";
+        btn.className = "remove-btn";
+        btn.onclick = function () {
           li.remove();
    };
 
-   li.appendChild(removeBtn);
+   li.appendChild(btn);
     taskList.appendChild(li);
         taskInput.value = "";
 }
